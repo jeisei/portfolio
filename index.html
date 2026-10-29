@@ -270,11 +270,11 @@
         awesome together!
     </h2>
 
-    <form class="contact__form" action="https://formsubmit.co/maximus17power@gmail.com" method="POST">
+    <form name="contact" class="contact__form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 
-    <input type="hidden" name="_subject" value="New portfolio contact message">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
+    <div hidden>
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </div>
 
     <div class="contact__row">
         <div class="contact__field">

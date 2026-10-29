@@ -4,9 +4,9 @@
 
 **Goal:** Обновить ссылки, проекты, контактную форму и удалить CV в существующем статическом портфолио, затем проверить и опубликовать проект в открытом GitHub-репозитории.
 
-**Architecture:** Сохранить текущую структуру статического HTML/CSS/JS. Все функциональные изменения выполнить в `index.html`; PDF CV удалить из `assets/cv`; внешние сервисы и зависимости не добавлять.
+**Architecture:** Сохранить текущую структуру статического HTML/CSS/JS. Все функциональные изменения выполнить в `index.html`; PDF CV удалить из `assets/cv`; обработку формы передать Netlify Forms без добавления зависимостей.
 
-**Tech Stack:** HTML, CSS, vanilla JavaScript, FormSubmit, Git/GitHub.
+**Tech Stack:** HTML, CSS, vanilla JavaScript, Netlify Forms, Git/GitHub.
 
 **Spec:** `docs/superpowers/specs/2026-10-29-portfolio-links-contact-design.md`
 
@@ -15,7 +15,7 @@
 - Не менять дизайн, CSS, изображения, анимации и тексты вне запрошенного.
 - Telegram должен вести на `https://t.me/jeiseidev`.
 - GitHub должен вести на `https://github.com/jeisei`.
-- FormSubmit должен отправлять на `maximus17power@gmail.com`.
+- Netlify Forms должен собирать отправки формы; email-уведомление на `maximus17power@gmail.com` настраивается в панели Netlify.
 - Удалить CV-ссылки и `assets/cv/max-shemchuk-cv.pdf`.
 - Три карточки должны вести на `https://avtoservise8889.netlify.app`, `https://gym-tracker87.netlify.app/`, `https://t.me/NihtykBot`; четвёртую карточку оставить без придуманного URL.
 
@@ -45,7 +45,7 @@
   - Set first three portfolio hrefs to the exact project URLs.
   - Keep the fourth portfolio card href as `#`.
   - Remove both CV link blocks from hero and About sections.
-  - Set the form action to `https://formsubmit.co/maximus17power@gmail.com`, keep `method="POST"`, and add hidden `_subject`, `_captcha`, and `_template` fields without changing visible form styles.
+  - Add `name="contact"`, `method="POST"`, `data-netlify="true"`, `netlify-honeypot="bot-field"`, and an invisible honeypot field without changing visible form styles.
 
 - [ ] **Step 2: Remove the CV file.**
   Delete only `assets/cv/max-shemchuk-cv.pdf` after verifying the path is the intended project CV.
