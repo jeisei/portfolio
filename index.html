@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+  <title>Portfolio — Max Shemchuk</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div class="sidebar__header">
+      <div class="sidebar__logo"><img src="assets/images/logo.svg" alt=""></div>
+      <h2 class="sidebar__name">Max Shemchuk</h2>
+    </div>
+
+    <img class="sidebar__avatar" src="assets/images/mePhoto.png" alt="">
+
+    <div class="sidebar__info">
+      <p class="sidebar__label">Specialization:</p>
+      <p class="sidebar__role">Frontend Developer</p>
+    </div>
+
+    <div class="sidebar__info">
+      <p class="sidebar__label">Based in:</p>
+      <p class="sidebar__location">Khmelnytskyi, Ukraine</p>
+    </div>
+
+    <ul class="sidebar__socials">
+      <li>
+        <a href="https://github.com/jeisei" aria-label="GitHub" target="_blank" rel="noopener">
+          <img src="assets/images/github.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <img src="assets/images/linkedin.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="https://t.me/jeiseidev" aria-label="Telegram" target="_blank" rel="noopener">
+          <img src="assets/images/telegram.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="mailto:maximus17power@gmail.com" aria-label="Email">
+          <img src="assets/images/gmail.png" alt="">
+        </a>
+      </li>
+    </ul>
+    <a href="#contact" class="sidebar__btn">Let's Work Together!</a>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+     <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="topbarNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="topbar__nav" id="topbarNav" aria-label="Main">
+
+        <ul class="topbar__list">
+          <li>
+            <a href="#home" class="topbar__link is-active">Home</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="topbar__link ">Portfolio</a>
+          </li>
+          <li>
+            <a href="#about" class="topbar__link">About Me</a>
+          </li>
+          <li>
+            <a href="#contact" class="topbar__link ">Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <a href="#contact" class="topbar__btn">Let's Talk
+        <img src="assets/images/talk.svg" alt="">
+      </a>
+
+    </header>
+
+    <section id="home" class="section section--hero ">
+
+      <div class="section__label">
+        <span class="section__dot">
+          <img src="assets/images/rhomb.png" alt="">
+        </span>
+        <span>Let's meet</span>
+      </div>
+
+      <h2 class="title">
+        I'm Max Shemchuk<br>
+        Frontend Developer
+      </h2>
+
+      <div class="btn-group">
+        <a href="#portfolio" class="btn--primary">
+          My Works
+          <img src="assets/images/arrow-bottom.png" alt="">
+        </a>
+      </div>
+
+      <a class="scroll-down" href="#about" aria-label="Scroll to About Me">
+        <svg class="scroll-down__circle" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <path id="scroll-circle" d="M 50,50 m -36,0
+           a 36,36 0 1,1 72,0
+           a 36,36 0 1,1 -72,0" />
+          </defs>
+
+          <text>
+            <textPath href="#scroll-circle" textLength="226.2" lengthAdjust="spacing">
+              SCROLL FOR MORE • SCROLL FOR MORE •
+            </textPath>
+          </text>
+        </svg>
+
+        <svg class="scroll-down__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4v16m-6-6 6 6 6-6" />
+        </svg>
+      </a>
+
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2 id="portfolio-title" class="section__label">
+        <img src="assets/images/rhomb.png" alt="">
+        Portfolio
+      </h2>
+
+      <p class="title">Check out my featured projects</p>
+
+
+      <div class="portfolio__grid">
+
+    <article class="portfolio__card">
+        <a href="https://avtoservise8889.netlify.app" target="_blank" rel="noopener" class="portfolio__link">
+            <img class="portfolio__image" src="assets/images/work1.webp" alt="">
+            <div class="portfolio__tags">
+                <span class="portfolio__tag">HTML</span>
+                <span class="portfolio__tag">CSS</span>
+            </div>
+        </a>
+    </article>
+
+    <article class="portfolio__card">
+        <a href="https://gym-tracker87.netlify.app/" target="_blank" rel="noopener" class="portfolio__link">
+            <img class="portfolio__image" src="assets/images/work2.png" alt="">
+            <div class="portfolio__tags">
+                <span class="portfolio__tag">JavaScript</span>
+                <span class="portfolio__tag">Responsive</span>
+            </div>
+        </a>
+    </article>
+
+    <article class="portfolio__card">
+        <a href="https://t.me/NihtykBot" target="_blank" rel="noopener" class="portfolio__link">
+            <img class="portfolio__image" src="assets/images/work3.webp" alt="">
+            <div class="portfolio__tags">
+                <span class="portfolio__tag">Frontend</span>
+                <span class="portfolio__tag">Layout</span>
+            </div>
+        </a>
+    </article>
+
+    <article class="portfolio__card">
+        <a href="#" target="_blank" rel="noopener" class="portfolio__link">
+            <img class="portfolio__image" src="assets/images/work4.png" alt="">
+            <div class="portfolio__tags">
+                <span class="portfolio__tag">UI</span>
+                <span class="portfolio__tag">Concept</span>
+            </div>
+        </a>
+    </article>
+
+</div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title" class="section__label">
+        <img src="assets/images/rhomb.png" alt="">
+        About Me
+      </h2>
+
+      <p class="title">Turning complex problems into simple design</p>
+
+      <dl class="about__stats">
+        <div class="about__stat">
+          <dd class="about__stat-value">+</dd>
+          <dt class="about__stat-label">Happy clients</dt>
+        </div>
+        <div class="about__stat">
+          <dd class="about__stat-value">+</dd>
+          <dt class="about__stat-label">Years of experience</dt>
+        </div>
+        <div class="about__stat">
+          <dd class="about__stat-value">+</dd>
+          <dt class="about__stat-label">Projects done</dt>
+        </div>
+      </dl>
+
+      <div class="about__content">
+
+        <div class="about__text">
+          <p>
+            Frontend developer with a passion for clean design and functional code. I build websites that look good and
+            work fast.
+          </p>
+
+          <p>
+            Currently learning JavaScript, React and modern tooling. Open to freelance projects and full-time
+            opportunities.
+          </p>
+        </div>
+
+        <dl class="about__info">
+          <div>
+            <dt class="about__info-label">Name</dt>
+            <dd class="about__info-value">Max Shemchuk</dd>
+          </div>
+          <div>
+            <dt class="about__info-label">Phone</dt>
+            <dd class="about__info-value"><a href="tel:+380676005605">+38-067-600-5605</a></dd>
+          </div>
+          <div>
+            <dt class="about__info-label">Email</dt>
+            <dd class="about__info-value">
+              <a href="mailto:maximus17power@gmail.com">maximus17power@gmail.com</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="about__info-label">Location</dt>
+            <dd class="about__info-value">Khmelnytskyi, Ukraine</dd>
+          </div>
+        </dl>
+      </div>
+
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+
+    <div class="section__label">
+        <img src="assets/images/rhomb.png" alt="">
+        Contact
+    </div>
+
+    <h2 id="contact-title" class="title">
+        Let's make something<br>
+        awesome together!
+    </h2>
+
+    <form class="contact__form" action="https://formsubmit.co/maximus17power@gmail.com" method="POST">
+
+    <input type="hidden" name="_subject" value="New portfolio contact message">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="contact__row">
+        <div class="contact__field">
+            <input type="text" id="name" name="name" class="contact__input" placeholder="Your Name*" required>
+        </div>
+        <div class="contact__field">
+            <input type="text" id="company" name="company" class="contact__input" placeholder="Company Name">
+        </div>
+    </div>
+
+    <div class="contact__row">
+        <div class="contact__field">
+            <input type="email" id="email" name="email" class="contact__input" placeholder="Email Address*" required>
+        </div>
+        <div class="contact__field">
+            <input type="tel" id="phone" name="phone" class="contact__input" placeholder="Phone Number*" required>
+        </div>
+    </div>
+
+    <div class="contact__field">
+        <textarea id="message" name="message" class="contact__textarea" placeholder="A Few Words*" rows="3" required></textarea>
+    </div>
+
+    <button type="submit" class="contact__submit">
+        Send Message
+        <img src="assets/images/send.png" alt="">
+    </button>
+
+</form>
+
+</section>
+
+  </main>
+  
+  <script src="script.js" defer></script>
+
+</body>
+
+</html>

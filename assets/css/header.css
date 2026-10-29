@@ -1,0 +1,205 @@
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin: 0 40px;
+    padding: 16px 0;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+.topbar img {
+    width: 22px;
+    height: 22px;
+}
+
+.burger {
+    display: none;
+}
+
+.topbar__list {
+    display: flex;
+    gap: 20px;
+}
+
+.topbar__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 18px;
+    border-radius: 15px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+
+    border: 1px solid transparent;
+    background: transparent;
+
+    transition:
+        color 0.2s,
+        background 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.topbar__link:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.topbar__link.is-active {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.05),
+        inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+.topbar__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 14px;
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #f5d0fe 0%, #e9d5ff 50%, #ddd6fe 100%);
+    color: #1a0d2e;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow:
+        0 0 20px rgba(233, 213, 255, 0.4),
+        0 0 40px rgba(167, 139, 250, 0.2);
+
+    transition: box-shadow 0.2s, transform 0.15s, background 0.2s;
+}
+
+.topbar__btn:hover {
+    background: linear-gradient(135deg, #f0abfc 0%, #d8b4fe 50%, #c4b5fd 100%);
+    box-shadow:
+        0 0 30px rgba(233, 213, 255, 0.6),
+        0 0 60px rgba(167, 139, 250, 0.3);
+    transform: translateY(-1px);
+}
+
+.topbar__btn img {
+    width: 22px;
+    height: 22px;
+}
+
+.burger {
+    width: 28px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+    position: relative;
+}
+
+.burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.burger.is-open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.burger.is-open span:nth-child(2) { opacity: 0; }
+.burger.is-open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+@media (max-width: 1050px) {
+    .topbar__list {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .topbar__list {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .burger {
+        display: flex;
+        order: 2;
+    }
+
+    .topbar__cta {
+        order: 1;
+    }
+
+    .topbar__nav {
+        order: 3;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+
+        background: #140f0f;
+        padding: 80px 24px 24px;
+
+        display: flex;
+        flex-direction: column;
+
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 150;
+        overflow-y: auto;
+    }
+
+    .topbar__nav.is-open {
+        transform: translateX(0);
+    }
+
+    .topbar__list {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .topbar__list li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar__link {
+        display: block;
+        padding: 16px 0;
+        font-size: 18px;
+        text-align: left;
+        border: none;
+        background: none;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .topbar__link.is-active {
+        color: #fff;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,144 @@
+
+.section--hero {
+  position: relative;
+  min-height: calc(100svh - 80px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+}
+
+.section__label {
+display: inline-flex;
+align-items: center;
+gap: 5px;
+font-size: 14px;
+font-weight: 600;
+ color: rgba(255, 255, 255, 0.541);
+
+   border: solid 1px;
+    border-color: rgba(255, 255, 255, 0.034);  
+     border-radius: 15px;
+    padding: 4px 7px;
+}
+
+.section__label img{
+    width: 12px;
+    height: 12px;
+}
+
+
+.btn-group {
+display: flex;
+align-items: center;
+gap:40px;
+}
+
+.btn--primary {
+     border: solid 1px;
+    border-color: rgba(255, 255, 255, 0.15);  
+     border-radius: 17px;
+    padding: 6px 15px;
+
+
+display: flex;
+align-items: center;
+gap: 5px;
+
+    transition: box-shadow 0.2s, transform 0.15s, background 0.2s;
+
+}
+
+.btn--primary:hover {
+    background: #2e2c2ca1;
+    box-shadow: 
+        0 0 30px rgba(89, 79, 100, 0.137),
+        0 0 60px rgba(48, 45, 54, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn--primary img{
+    width: 12px;
+    height: 12px;
+}
+
+.btn--ghost {
+    color: rgba(255, 255, 255, 0.5);
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.btn--ghost img{
+    width: 12px;
+    height: 12px;
+}
+
+
+.scroll-down {
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+
+  color: #e4d9ef;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.scroll-down__circle text {
+  fill: currentColor;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.scroll-down__arrow {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1275px){
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .title{
+        font-size: 50px;
+    }
+
+
+}
+
+@media (max-width: 700px){
+    body{
+        padding: 10px 0px;
+    }
+}
+
+@media (max-width: 640px){
+   .section--hero .title{
+     font-size: 40px;
+   }
+}
+
+@media (max-width: 530px){
+.section--hero .title{
+    font-size: 30px;
+}
+}
+
+@media (max-width: 425px){
+    .section--hero .title{
+        font-size: 25px;
+    }
+}
+
