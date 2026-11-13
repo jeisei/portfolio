@@ -87,6 +87,25 @@ color: #f0f0f8;
     height: 14px;
 }
 
+.contact__submit:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.contact__feedback {
+    color: #f0f0f8;
+    font-size: 14px;
+}
+
+.contact__feedback:has(.contact__status:empty) {
+    position: absolute;
+}
+
+.contact__email-fallback {
+    color: #f1acfd;
+    text-decoration: underline;
+}
+
 
 @media (max-width: 780px) {
     .contact__row {

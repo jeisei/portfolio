@@ -155,7 +155,7 @@
       <div class="portfolio__grid">
 
     <article class="portfolio__card">
-        <a href="https://avtoservise8889.netlify.app" target="_blank" rel="noopener" class="portfolio__link">
+        <a href="https://bee-tattoo-studio.netlify.app/" target="_blank" rel="noopener" class="portfolio__link">
             <img class="portfolio__image" src="assets/images/work1.webp" alt="">
             <div class="portfolio__tags">
                 <span class="portfolio__tag">HTML</span>
@@ -175,7 +175,7 @@
     </article>
 
     <article class="portfolio__card">
-        <a href="https://t.me/NihtykBot" target="_blank" rel="noopener" class="portfolio__link">
+        <a href="https://sneakerssh.netlify.app/" target="_blank" rel="noopener" class="portfolio__link">
             <img class="portfolio__image" src="assets/images/work3.webp" alt="">
             <div class="portfolio__tags">
                 <span class="portfolio__tag">Frontend</span>
@@ -185,7 +185,7 @@
     </article>
 
     <article class="portfolio__card">
-        <a href="#" target="_blank" rel="noopener" class="portfolio__link">
+        <a href="https://orenda-plus-demo-maxsweed918.netlify.app" target="_blank" rel="noopener" class="portfolio__link">
             <img class="portfolio__image" src="assets/images/work4.png" alt="">
             <div class="portfolio__tags">
                 <span class="portfolio__tag">UI</span>
@@ -270,11 +270,13 @@
         awesome together!
     </h2>
 
-    <form name="contact" class="contact__form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="contact" class="contact__form" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
 
     <div hidden>
-        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        <label>Don't fill this out if you're human: <input name="bot-field" autocomplete="off"></label>
     </div>
+
 
     <div class="contact__row">
         <div class="contact__field">
@@ -303,13 +305,18 @@
         <img src="assets/images/send.png" alt="">
     </button>
 
+    <div class="contact__feedback">
+        <p class="contact__status" role="status"></p>
+        <a class="contact__email-fallback" href="mailto:maximus17power@gmail.com" hidden>Email Max directly</a>
+    </div>
+
 </form>
 
 </section>
 
   </main>
   
-  <script src="script.js" defer></script>
+  <script src="script.js?v=3" defer></script>
 
 </body>
 

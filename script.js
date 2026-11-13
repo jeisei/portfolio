@@ -59,6 +59,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const contactForm = document.querySelector('.contact__form');
+
+if (contactForm) {
+    const submitButton = contactForm.querySelector('.contact__submit');
+    const status = contactForm.querySelector('.contact__status');
+    const emailFallback = contactForm.querySelector('.contact__email-fallback');
+
+    contactForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (submitButton.disabled) return;
+
+        const fields = new URLSearchParams(new FormData(contactForm));
+        submitButton.disabled = true;
+        emailFallback.hidden = true;
+        status.textContent = 'Sending your message…';
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: fields,
+                signal: AbortSignal.timeout(12000)
+            });
+            if (!response.ok) {
+                throw new Error('Netlify did not accept the message.');
+            }
+
+            status.textContent = 'Your message was submitted. Thank you!';
+            contactForm.reset();
+        } catch {
+            status.textContent = 'We couldn’t confirm your message was sent. Try again or email Max directly.';
+            const body = [
+                `Name: ${fields.get('name')}`,
+                `Company: ${fields.get('company')}`,
+                `Email: ${fields.get('email')}`,
+                `Phone: ${fields.get('phone')}`,
+                '',
+                fields.get('message')
+            ].join('\r\n');
+            const recipient = emailFallback.href.split('?')[0];
+            emailFallback.href = `${recipient}?subject=Portfolio%20inquiry&body=${encodeURIComponent(body)}`;
+            emailFallback.hidden = false;
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
+}
+
 const burger = document.querySelector('.burger');
 const nav    = document.getElementById('topbarNav');
 
