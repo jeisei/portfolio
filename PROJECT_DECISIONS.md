@@ -1,0 +1,31 @@
+# Portfolio decisions
+
+The site, source code, code comments, UI strings and project documentation are in English. The implementation uses BEM and keeps styles, components, effects, configuration, server code and tests in separate folders.
+
+## Layout and visual references
+
+- Build a single page in this order: Welcome, About, Portfolio, Contact. On desktop, each section fills the viewport and aligns to the top. Wheel and anchor transitions ease into the next scene. Mobile scrolls natively after the first Welcome transition. Projects is selected by default, and the Portfolio tabs share the same layout track.
+- The approved archive mockups govern composition. Use near-black graphite, sparse fixed white stars at the Welcome density, understated borders and no persistent navigation. The intro may be darker. Use Manrope with weight, spacing and sizes tuned against the 1536-pixel desktop references.
+- About has a horizontally centered portrait that meets the bottom of the desktop section, with balanced text columns. It stacks as identity, portrait, description on mobile. A portrait extended to show the waist and hands is pending. The About button selects Projects. The Portfolio heading, switcher and tile groups are centered and the heading and switcher keep their positions across both tabs.
+- Keep six project cards in the three-by-two desktop layout. The first card is Bee Tattoo Studio, with three tattoos from the studio gallery. The second card is NOVEX, with a [sneaker photograph by Graddes on Unsplash](https://unsplash.com/photos/a-pair-of-sneakers-on-a-blue-background-43gAsQeiMks). The third card is Tom Ford — Lost Cherry, with artwork from the project's Discover section. The fourth card is Lounge, with a full-width crop of the restaurant facade. The fifth card is Monster Ultra Black, with the can from the project poster on a dark cherry backdrop. The sixth card is Gym Tracker, with three in-app screens showing the weekly plan, an active workout and progress statistics. Each card has an approved English description and a Visit Website link that opens in a new tab.
+- Keep seven skill marks in order: HTML, CSS, JavaScript, Codex, Claude, Figma, React. Use one desktop row, wrap on smaller screens, and expose names as hints and image alternatives.
+- Preserve Max Shemchuk, Frontend Developer, the approved About paragraphs and the Contact availability copy in regular weight. View CV has a leading document icon and will open the PDF in a new tab once supplied.
+
+## Motion
+
+- Show the intro on each load or reload of Welcome, including the Welcome hash. The intro has a Skip intro action and a cap of three seconds. Progress counts critical resources that have loaded. Dust forms the Welcome title and a small cluster for the butterfly. Show linked sections and reduced-motion Welcome immediately.
+- Use a fixed graphite section menu with a sliding rounded highlight on desktop and a right-aligned hamburger button below 768 px. The menu tracks the section in view and provides access to Contact.
+- Keep native scrolling between sections. Anchor links scroll in 520 ms. About, Portfolio, and Contact assemble from silver dust over 1.75 seconds when first opened by a link before being viewed. The first Welcome-to-About animation reuses particles from the title and visible butterfly. A subsequent link queues the next section until the active assembly finishes. Returning to a viewed section uses smooth scrolling. Escape closes the open navigation or completes the active transition. Reduced motion uses immediate navigation.
+- The original silver butterfly follows a fine pointer only in Welcome. Its size scales with the desktop viewport. Left and right turns ease over 650 ms, and vertical travel preserves the heading. The left-facing pose reverses the wing fold depth to mirror the right-facing stroke. The 1.65-second cycle includes a short glide in the fully open pose. Keep gentle position lag and reduced opacity near controls.
+- The light trail follows the actual cursor on the entire page. It tapers and fades in about 0.6 seconds with sparse motes. The original light trail is the visual reference.
+- The image below the About cursor is the original Silver Surfer art with a cutout background and uniform scaling, 12% larger than the portrait. Reveal it through a soft circular transition between layers. The mask eases toward the pointer and fades in and out. The attached Spider-Man screen recording defines the local reveal behavior. Use the normal portrait on touch and under reduced motion. The butterfly and trail are also disabled in those modes.
+- Target smooth animation around 60 frames per second on an ordinary laptop and an initial resource budget under 1 MB. Reduce particles on lower-power devices and pause effects when dormant.
+
+## Contacts and delivery
+
+- The Contact section uses Telegram @Jeiseix, GitHub github.com/jeisei, email maximus17power@gmail.com and phone +380 67 600 56 05. LinkedIn is an inactive placeholder. The current preview is local.
+- The user authorized email integration. The confirmed recipient is maximus17power@gmail.com. All four form fields are required. Validate client-side and server-side, use a small privacy note, honeypot and rate limit, and show success only after an accepted provider response. Preserve values on error.
+- Use Netlify Functions with Resend. Server environment variables hold the sender, recipient and API key. The confirmed recipient is configured as an example. A Resend key and verified sending domain are pending. The local site states that delivery is unavailable until configured.
+- The delegated stack choice is Vite, vanilla JavaScript, CSS and Canvas 2D. The portrait uses an image mask. The main browser targets are Google Chrome and Safari. Check Firefox, 320–1920 pixel widths, keyboard, touch and reduced motion where available.
+- This release is a private local preview. Netlify and GitHub are planned after visual review. Public URL, sender domain and live delivery configuration are pending. Basic English SEO metadata is included. Analytics is deferred.
+- Deliver source, the production build, an English README, a placeholder list, desktop/mobile screenshots and a verification report. A video recording of the delivered site is unnecessary.

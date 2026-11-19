@@ -1,0 +1,43 @@
+import './styles/base.css';
+import './styles/navigation.css';
+import './styles/welcome.css';
+import './styles/about.css';
+import './styles/portfolio.css';
+import './styles/contact.css';
+import './styles/effects.css';
+import { site } from './config/site.js';
+import { renderContacts, renderCv } from './components/profile.js';
+import { mountTabs, renderProjects, renderSkills } from './components/portfolio.js';
+import { mountSectionLink, mountSectionNavigation } from './components/section-navigation.js';
+import { createSectionScroller } from './components/section-scroll.js';
+import { mountContactForm } from './components/contact-form.js';
+import { paintStarfield } from './effects/stars.js';
+import { mountCursorTrail } from './effects/cursor-trail.js';
+import { mountButterfly } from './effects/butterfly.js';
+import { mountPortraitReveal } from './effects/portrait.js';
+import { playIntro } from './effects/intro.js';
+import { createSectionAssembly } from './effects/section-assembly.js';
+
+renderCv(document.querySelector('[data-cv]'), site.cv);
+renderContacts(document.querySelector('[data-contacts]'), site.contacts);
+renderProjects(document.querySelector('[data-projects]'), site.projects);
+renderSkills(document.querySelector('[data-skills]'), site.skills);
+
+const selectTab = mountTabs(document.querySelector('[data-tabs]'));
+const welcome = document.getElementById('welcome');
+const about = document.getElementById('about');
+const title = document.getElementById('welcome-title');
+const butterfly = document.querySelector('[data-butterfly]');
+const scene = createSectionAssembly({ canvas: document.querySelector('[data-scene-dust]'), welcome, title, butterfly });
+const scroller = createSectionScroller({ welcome, about, scene });
+mountSectionLink(welcome.querySelector('.welcome__scroll'), scroller);
+mountSectionLink(document.querySelector('[data-view-projects]'), scroller, () => selectTab(0));
+mountSectionNavigation(document.querySelector('[data-site-nav]'), scroller, scene.markShown);
+mountContactForm(document.querySelector('[data-contact-form]'));
+
+const intro = document.querySelector('[data-intro]');
+const butterflyReady = mountButterfly(butterfly, welcome);
+paintStarfield(document.querySelector('[data-stars]'));
+mountCursorTrail(document.querySelector('[data-trail]'), () => !intro.hidden || scroller.active);
+mountPortraitReveal(document.querySelector('[data-portrait]'));
+playIntro(intro, title, butterflyReady);

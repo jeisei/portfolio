@@ -1,0 +1,87 @@
+@import '@fontsource-variable/manrope/wght.css';
+
+:root {
+  color-scheme: dark;
+  --color-graphite: #0d0d0f;
+  --color-intro: #060606;
+  --color-surface: #171719;
+  --color-ink: #f4f4f4;
+  --color-muted: #b9b9bc;
+  --color-stroke: rgb(255 255 255 / 14%);
+  --color-stroke-strong: rgb(255 255 255 / 55%);
+  --font-sans: 'Manrope Variable', Manrope, system-ui, sans-serif;
+  --ease-out: cubic-bezier(.2, .65, .3, 1);
+  --page-gutter: clamp(20px, 7.55vw, 116px);
+  --section-title: clamp(42px, 4.75vw, 74px);
+  --site-nav-clearance: calc(max(12px, env(safe-area-inset-top)) + 64px);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--color-graphite); scrollbar-gutter: stable; }
+body {
+  margin: 0;
+  color: var(--color-ink);
+  font: 400 16px / 1.5 var(--font-sans);
+}
+:is(h1, h2, h3, p, ul, figure) { margin: 0; }
+ul { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+button, input, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+button[aria-disabled="true"], button:disabled { cursor: default; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
+
+.page__filters { position: absolute; }
+
+.section-title {
+  font-size: var(--section-title);
+  font-weight: 300;
+  line-height: 1.07;
+  letter-spacing: .04em;
+}
+
+.icon { display: block; width: 1.45em; height: 1.45em; flex: none; }
+.icon--down { transform: rotate(90deg); }
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  padding: 12px 20px;
+  color: var(--color-graphite);
+  background: var(--color-ink);
+  border-radius: 8px;
+  clip-path: inset(50%);
+}
+.skip-link:focus { clip-path: none; }
+
+.action {
+  display: inline-flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 8px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.action--outline { border-color: var(--color-stroke-strong); }
+.action--outline:not(:disabled):not([aria-disabled="true"]):hover {
+  background-color: rgb(255 255 255 / 7%);
+  border-color: var(--color-ink);
+}
+.action[aria-disabled="true"], .action:disabled { color: var(--color-muted); }
+
+:where(main :is(a, button, input, textarea, select, [role="tabpanel"])) {
+  scroll-margin-block-start: var(--site-nav-clearance);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

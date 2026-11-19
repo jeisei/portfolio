@@ -1,0 +1,133 @@
+.starfield, .cursor-trail, .intro__dust, .scene-dust {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.starfield, .cursor-trail { z-index: 0; }
+.scene-dust { z-index: 4; }
+.page--assembly-active { overflow-y: hidden; }
+.page__section--assembling {
+  --assembly-feather: clamp(30px, 8svh, 82px);
+  mask-image: linear-gradient(
+    to bottom,
+    black calc(var(--assembly-edge, -20svh) - var(--assembly-feather)),
+    transparent calc(var(--assembly-edge, -20svh) + var(--assembly-feather))
+  );
+}
+main { position: relative; z-index: 1; }
+.butterfly {
+  --butterfly-hinge: 53% 63%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: clamp(112px, min(15vw, 31svh), 280px);
+  aspect-ratio: 1.05;
+  visibility: hidden;
+  opacity: 0;
+  perspective: 420px;
+  perspective-origin: var(--butterfly-hinge);
+  pointer-events: none;
+  transition: opacity 260ms ease, visibility 260ms;
+}
+.butterfly--visible { visibility: visible; opacity: .88; }
+.butterfly--quiet { opacity: .26; }
+.butterfly--dissolving {
+  opacity: var(--butterfly-opacity, .88);
+  transition: none;
+}
+.butterfly__pose {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform-origin: var(--butterfly-hinge);
+  transform: rotateY(0deg);
+  transition: transform 650ms ease-in-out, --butterfly-fold-direction 650ms ease-in-out;
+}
+@property --butterfly-fold-direction {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+.butterfly--facing-left .butterfly__pose {
+  --butterfly-fold-direction: -1;
+  transform: rotateY(180deg);
+}
+.butterfly__wing, .butterfly__body {
+  position: absolute;
+  inset: 0;
+  background: center / contain no-repeat;
+}
+.butterfly__wing {
+  --wing-fold: 68deg;
+  transform-origin: var(--butterfly-hinge);
+  animation: flutter 1650ms ease-in-out infinite paused;
+}
+.butterfly--visible .butterfly__wing { animation-play-state: running; }
+.butterfly__wing--left { background-image: url('/media/butterfly-left.webp'); }
+.butterfly__wing--right { --wing-fold: -68deg; background-image: url('/media/butterfly-right.webp'); }
+.butterfly__body { background-image: url('/media/butterfly-body.webp'); }
+@keyframes flutter {
+  0%, 82%, 100% { transform: rotate3d(-.48, .88, 0, 0deg); }
+  40% { transform: rotate3d(-.48, .88, 0, calc(var(--wing-fold) * var(--butterfly-fold-direction))); }
+}
+.intro {
+  position: fixed;
+  z-index: 6;
+  inset: 0;
+  background: rgb(0 0 0 / 53%);
+  opacity: 1;
+  transition: opacity 280ms var(--ease-out);
+}
+.intro--exiting { opacity: 0; pointer-events: none; }
+.page--intro-pending .intro[hidden] { display: block !important; }
+.page--intro-pending .welcome__title, .page--intro-running .welcome__title,
+.page--intro-pending .welcome__scroll, .page--intro-running .welcome__scroll { visibility: hidden; }
+.page--intro-pending .intro { background: var(--color-intro); }
+.page--intro-pending, .page--intro-running { overflow: hidden; }
+.intro__loading {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 17px;
+  width: min(408px, 68vw);
+  transform: translateX(-50%);
+}
+.intro__label { font-size: 14px; letter-spacing: .22em; }
+.intro__progress {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 3px;
+  border: 0;
+  border-radius: 4px;
+  background: #3d3d3f;
+}
+.intro__progress::-webkit-progress-bar { background: #3d3d3f; border-radius: 4px; }
+.intro__progress::-webkit-progress-value { background: #b9b9bc; border-radius: 4px; }
+.intro__progress::-moz-progress-bar { background: #b9b9bc; border-radius: 4px; }
+.intro__skip {
+  position: absolute;
+  right: clamp(16px, 4vw, 60px);
+  bottom: 4svh;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid var(--color-stroke);
+  border-radius: 999px;
+  background: #141416;
+  font-size: 13px;
+}
+.intro__skip:hover { border-color: var(--color-stroke-strong); }
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-trail { display: none; }
+}
+@media (hover: none), (pointer: coarse) {
+  .butterfly { width: clamp(76px, 22vw, 112px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .butterfly { display: none; }
+}

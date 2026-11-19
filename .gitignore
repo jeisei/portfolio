@@ -1,4 +1,9 @@
-.playwright-mcp/
-.superpowers/
+node_modules/
+dist/
 .netlify/
-portfolio-ready-to-publish/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+MAX_SHEMCHUK_PORTFOLIO_CODEX/

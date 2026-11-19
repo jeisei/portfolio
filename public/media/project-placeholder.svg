@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" preserveAspectRatio="xMidYMid slice">
+  <rect width="780" height="300" fill="#f3f3f4"/>
+  <path d="M0 164 Q112 153 235 219 T521 159 Q663 57 780 97 V300 H0Z" fill="#e8e8ea"/>
+  <path d="M0 232 Q140 181 288 250 T567 225 Q669 180 780 208 V300 H0Z" fill="#efeff0"/>
+</svg>

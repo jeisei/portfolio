@@ -1,0 +1,7 @@
+# Portfolio project cards
+
+When the user sends a website to add to Projects, open it and verify its name, purpose, and relevant features. Use the requested slot or propose the next empty slot. Write a title and one concise English sentence based on what the site actually shows. Discuss proposals with the user in Russian.
+
+Prepare a card mockup with the proposed cover, title, description, and **Visit Website** button. Prefer imagery from the project itself. When the user asks for an external image, show the image and its source before adding it. Keep covers full-bleed, use the same dimensions as the existing cards, and frame the key subject for desktop and mobile. Treat an “avatar” as the card cover in this context. Use the artwork alone, without added logo badges or icons, unless the user asks for them. Follow the project's requested color tone.
+
+Show the mockup and ask the user to approve the cover and copy before adding the card. Keep any already approved parts when revising a proposal. After approval, add the entry to `src/config/site.js` and the optimized WebP to `public/media/projects/`. Include descriptive English alt text. Use the existing card component and keep **Visit Website** opening the supplied URL in a new tab. Update any documentation and assertions that depend on slot contents. Build and verify the slot order, cover dimensions, image loading, copy, and link in the local preview. Deploy only if the user requests it.
